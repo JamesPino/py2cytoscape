@@ -11,11 +11,8 @@ class NetworkUtil(object):
             table = network.get_edge_table()
         else:
             raise ValueError('No such object type: ' + obj_type)
-
-        subset= table['name']
         name2suid = {}
-        for suid in subset.index:
-            name2suid[subset[suid]] = suid
-            table.set_index(["SUID"],inplace=True)
+        for suid, name in table[['SUID', 'name']].values:
+            name2suid[name] = suid
         return name2suid
 
