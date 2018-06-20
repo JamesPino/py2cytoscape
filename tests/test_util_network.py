@@ -3,6 +3,7 @@ from py2cytoscape.data.util_network import NetworkUtil
 
 import unittest
 
+
 class UtilNetworkTests(unittest.TestCase):
 
     def setUp(self):
